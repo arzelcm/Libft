@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   number_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 13:13:29 by arcanava          #+#    #+#             */
-/*   Updated: 2024/02/24 13:13:31 by arcanava         ###   ########.fr       */
+/*   Created: 2024/02/28 16:54:22 by arcanava          #+#    #+#             */
+/*   Updated: 2024/02/28 16:54:26 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+int	count_digits(long nbr)
+{
+	int		i;
+	long	num;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
+	num = (long) nbr;
+	if (nbr == 0)
+		return (1);
+	i = 0;
+	if (num < 0)
+		num *= -1;
+	while (num > 0)
+	{
+		num /= 10;
+		i++;
+	}
+	return (i);
+}
 
-char	*get_next_line(int fd);
+int	count_hex_digits(unsigned int nbr)
+{
+	int	i;
 
-int		line_break_pos(char *str);
-
-void	free_buffer(char **buff);
-
-#endif
+	i = 0;
+	while (nbr)
+		nbr /= 16 + (0 * i++);
+	return (i);
+}

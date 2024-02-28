@@ -46,8 +46,16 @@ SRCS = ft_isdigit.c \
 		ft_putchar.c \
 		ft_putstr.c \
 		ft_putnbr.c \
-		get_next_line_bonus.c \
-		get_next_line_utils_bonus.c
+		get_next_line.c \
+		get_next_line_utils.c \
+		ft_printf.c \
+		ft_printf_parses.c \
+		ft_printf_complex_parses.c \
+		ft_printf_padding_helper.c \
+		ft_printf_complex_padding_helper.c \
+		ft_printf_format_helper.c \
+		ft_printf_flags_utils.c \
+		number_utils.c
 OBJS = $(SRCS:%.c=$(BINDIR)/%.o)
 DEPS = $(SRCS:%.c=%.d)
 

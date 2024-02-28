@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
+/*   By: arcanava <arcanava@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:00:08 by arcanava          #+#    #+#             */
-/*   Updated: 2024/02/12 17:06:39 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:05:57 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "get_next_line_bonus.h"
+
+# include "get_next_line.h"
+# include "ft_printf.h"
 
 int		ft_isalpha(int c);
 
@@ -114,5 +116,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_putstr(char *str, int *count);
 
 long	ft_putnbr(long n, int *count);
+
+int		count_digits(long nbr);
+
+int		count_hex_digits(unsigned int nbr);
 
 #endif
