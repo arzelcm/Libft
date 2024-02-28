@@ -45,7 +45,9 @@ SRCS = ft_isdigit.c \
 		ft_toupper.c \
 		ft_putchar.c \
 		ft_putstr.c \
-		ft_putnbr.c
+		ft_putnbr.c \
+		get_next_line_bonus.c \
+		get_next_line_utils_bonus.c
 OBJS = $(SRCS:%.c=$(BINDIR)/%.o)
 DEPS = $(SRCS:%.c=%.d)
 
