@@ -51,29 +51,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
-/*
-void	*fun(void *param)
-{
-	return (((int *) param) + 1);
-}
-
-void	del(void *pp)
-{
-	
-}
-
-int	main(void)
-{
-	size_t  i = 0;
-    t_list  *lst = ft_lstnew(0);
-    t_list  *prev_list = lst;
-    while (i < 43)
-    {
-        prev_list->next = ft_lstnew((void *) &i);
-        prev_list = prev_list->next;
-        i++;
-	}
-
-	t_list	*new_lst = ft_lstmap(lst, fun, del);
-	return (0);
-}*/

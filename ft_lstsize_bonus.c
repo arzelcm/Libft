@@ -26,18 +26,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-/*
-int	main(void)
-{
-	size_t	i = 0;
-	t_list	*lst = ft_lstnew(0);
-	t_list	*prev_list = lst;
-	while (i < 43)
-	{
-		prev_list->next = ft_lstnew((void *) &i);
-		prev_list = prev_list->next;
-		i++;
-	}
-
-	ft_putnbr_fd(ft_lstsize(NULL), 1);
-}*/

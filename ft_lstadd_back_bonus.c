@@ -21,24 +21,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 		*lst = new;
 }
-/*
-int main(void)
-{
-	size_t  i = 0;
-	t_list  *lst = ft_lstnew(0);
-	t_list  *prev_list = lst;
-	while (i < 43)
-	{
-		prev_list->next = ft_lstnew((void *) &i);
-		prev_list = prev_list->next;
-		i++;
-	}
-
-	int num = -42;
-	t_list *back = ft_lstnew((void *) &num);
-	t_list **new_lst = malloc(sizeof(t_list *));
-	*new_lst = lst;
-	ft_lstadd_back(new_lst, back);
-
-	ft_putnbr_fd(*((int *) ft_lstlast(lst)->content), 1);
-}*/

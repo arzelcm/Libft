@@ -21,18 +21,3 @@ t_list	*ft_lstlast(t_list *lst)
 		curr_node = curr_node->next;
 	return (curr_node);
 }
-/*
-int main(void)
-{
-    size_t  i = 0;
-    t_list  *lst = ft_lstnew(0);
-    t_list  *prev_list = lst;
-    while (i < 43)
-    {
-        prev_list->next = ft_lstnew((void *) &i);
-        prev_list = prev_list->next;
-        i++;
-    }
-
-    ft_putnbr_fd(*((int *) ft_lstlast(lst)->content), 1);
-}*/
