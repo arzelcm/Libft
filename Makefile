@@ -1,13 +1,24 @@
 NAME = libft.a
 
+#----COLORS----#
+DEF_COLOR = \033[1;39m
+GREEN = \033[1;32m
+PINK = \033[1;35m
+CIAN = \033[1;36m
+BLUE = \033[1;34m
+
+#----COMPILER----#
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
+#----LIB LINKER----#
 AR = ar
 ARFLAGS = rcs
 
+#----DIRS----#
 BINDIR = bin
 
+#----MANDATORY----#
 SRCS = ft_isdigit.c \
 		ft_atoi.c \
 		ft_bzero.c \
@@ -59,6 +70,7 @@ SRCS = ft_isdigit.c \
 OBJS = $(SRCS:%.c=$(BINDIR)/%.o)
 DEPS = $(SRCS:%.c=%.d)
 
+#----BONUS----#
 BSRCS = ft_lstadd_back_bonus.c \
 		ft_lstadd_front_bonus.c \
 		ft_lstclear_bonus.c \
@@ -71,17 +83,23 @@ BSRCS = ft_lstadd_back_bonus.c \
 BOBJS = $(BSRCS:%.c=$(BINDIR)/%.o)
 BDEPS = $(BSRCS:%.c=%.d)
 
-
+#----TARGETS----#
 all: $(NAME)
 
+ifndef BONUS
 $(NAME): $(OBJS)
-	@echo "Linking objects and creating static library"
+	@echo "$(BLUE)\nLinking objects and creating static library...$(DEF_COLOR)"
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-	@echo "LIBFT CREATED!!!"
-
+	@echo "$(GREEN)[✓]LIBFT CREATED!!!$(DEF_COLOR)"
+else
+$(NAME): $(OBJS) $(BOBJS)
+	@echo "$(BLUE)\nLinking objects and creating static library...$(DEF_COLOR)"
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BOBJS)
+	@echo "$(GREEN)[✓]LIBFT vBONUS CREATED!!!$(DEF_COLOR)"
+endif
 $(BINDIR)/%.o: %.c Makefile
 	@mkdir -p $(BINDIR)
-	@echo "Compiling object"
+	@echo "$(CIAN)Compiling object for $(PINK)$<$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) -MMD -c $< -o $@
 
 clean:
@@ -92,13 +110,8 @@ fclean:	clean
 
 re: fclean all
 
-$(BINDIR)/.bonus: $(NAME) $(BOBJS)
-	@echo "Linking objects and creating static library with BONUS"
-	@$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BOBJS)
-	@touch $(BINDIR)/.bonus
-	@echo "LIBFT vBONUS CREATED!!!"
-
-bonus: $(BINDIR)/.bonus
+bonus:
+	@$(MAKE) --no-print-directory BONUS=1
 
 .PHONY: all clean fclean re bonus
 
