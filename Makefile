@@ -6,6 +6,7 @@ GREEN = \033[1;32m
 PINK = \033[1;35m
 CIAN = \033[1;36m
 BLUE = \033[1;34m
+YELLOW = \033[1;33m
 
 #----COMPILER----#
 CC = cc
@@ -87,28 +88,35 @@ BDEPS = $(BSRCS:%.c=%.d)
 all: $(NAME)
 
 ifndef BONUS
-$(NAME): $(OBJS)
+$(NAME):: $(OBJS)
 	@echo "$(BLUE)\nLinking objects and creating static library...$(DEF_COLOR)"
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-	@echo "$(GREEN)[✓]LIBFT CREATED!!!$(DEF_COLOR)"
+	@echo "\n$(GREEN)[✓] $(PINK)Libft$(GREEN) created!!!$(DEF_COLOR)\n"
 else
-$(NAME): $(OBJS) $(BOBJS)
+$(NAME):: $(OBJS) $(BOBJS)
 	@echo "$(BLUE)\nLinking objects and creating static library...$(DEF_COLOR)"
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BOBJS)
-	@echo "$(GREEN)[✓]LIBFT vBONUS CREATED!!!$(DEF_COLOR)"
+	@echo "\n$(GREEN)[✓] $(PINK)Libft bonus$(GREEN) created!!!$(DEF_COLOR)\n"
 endif
+
+$(NAME)::
+	@echo "$(YELLOW)Nothing to be done for $(PINK)libft$(DEF_COLOR)"
+
 $(BINDIR)/%.o: %.c Makefile
 	@mkdir -p $(BINDIR)
-	@echo "$(CIAN)Compiling object for $(PINK)$<$(DEF_COLOR)"
+	@printf "$(CIAN)\rCompiling: $(PINK)$(notdir $<)...$(DEF_COLOR)                   \r"
 	@$(CC) $(CFLAGS) -MMD -c $< -o $@
 
 clean:
 	@rm -rf $(BINDIR)
+	@echo "$(RED)Binaires and dependencies deleted$(DEF_COLOR)"
 
 fclean:	clean
 	@rm -f $(NAME)
+	@echo "$(RED)Library deleted$(DEF_COLOR)"
 
 re: fclean all
+	@echo "\n$(GREEN)[✓] $(PINK)Libft $(BLUE)recompiled!!!$(DEF_COLOR)\n"
 
 bonus:
 	@$(MAKE) --no-print-directory BONUS=1
