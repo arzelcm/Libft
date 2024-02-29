@@ -7,6 +7,7 @@ PINK = \033[1;35m
 CIAN = \033[1;36m
 BLUE = \033[1;34m
 YELLOW = \033[1;33m
+RED = \033[1;91m
 
 #----COMPILER----#
 CC = cc
@@ -113,10 +114,9 @@ clean:
 
 fclean:	clean
 	@rm -f $(NAME)
-	@echo "$(RED)Library deleted$(DEF_COLOR)"
+	@echo "$(RED)Library deleted$(DEF_COLOR)\n"
 
 re: fclean all
-	@echo "\n$(GREEN)[✓] $(PINK)Libft $(BLUE)recompiled!!!$(DEF_COLOR)\n"
 
 bonus:
 	@$(MAKE) --no-print-directory BONUS=1
