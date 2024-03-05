@@ -90,14 +90,14 @@ all: $(NAME)
 
 ifndef BONUS
 $(NAME):: $(OBJS)
-	@echo "$(BLUE)\nLinking objects and creating static library...$(DEF_COLOR)"
+	@printf "$(BLUE)\r\033[2KLinking objects and creating static library...$(DEF_COLOR)"
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-	@echo "\n$(GREEN)[✓] $(PINK)Libft$(GREEN) created!!!$(DEF_COLOR)\n"
+	@echo "\n$(GREEN)[✓] $(PINK)Libft$(GREEN) created!!!$(DEF_COLOR)"
 else
 $(NAME):: $(OBJS) $(BOBJS)
-	@echo "$(BLUE)\nLinking objects and creating static library...$(DEF_COLOR)"
+	@printf "$(BLUE)\r\033[2KLinking objects and creating static library...$(DEF_COLOR)"
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BOBJS)
-	@echo "\n$(GREEN)[✓] $(PINK)Libft bonus$(GREEN) created!!!$(DEF_COLOR)\n"
+	@echo "\n$(GREEN)[✓] $(PINK)Libft bonus$(GREEN) created!!!$(DEF_COLOR)"
 endif
 
 $(NAME)::
@@ -105,7 +105,8 @@ $(NAME)::
 
 $(BINDIR)/%.o: %.c Makefile
 	@mkdir -p $(BINDIR)
-	@printf "$(CIAN)\rCompiling: $(PINK)$(notdir $<)...$(DEF_COLOR)                   \r"
+	@printf "$(CIAN)\r\033[2KCompiling: $(PINK)$(notdir $<)...$(DEF_COLOR)"
+
 	@$(CC) $(CFLAGS) -MMD -c $< -o $@
 
 clean:
