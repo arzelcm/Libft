@@ -6,15 +6,12 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:00:08 by arcanava          #+#    #+#             */
-/*   Updated: 2024/04/02 13:10:02 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/03 19:47:49 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# include <stdlib.h>
-# include <unistd.h>
 
 # include "get_next_line.h"
 # include "ft_printf.h"
