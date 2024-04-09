@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:28:12 by arcanava          #+#    #+#             */
-/*   Updated: 2024/01/09 18:23:01 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/09 19:10:30 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (*s != '\0')
+	while (s && *s != '\0')
 	{
 		len++;
 		s++;
