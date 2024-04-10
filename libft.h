@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:00:08 by arcanava          #+#    #+#             */
-/*   Updated: 2024/04/03 19:47:49 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:28:40 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
+char	*ft_strrstr(const char *haystack, const char *needle);
 
 int		ft_atoi(const char *str);
 
