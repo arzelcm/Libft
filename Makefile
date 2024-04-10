@@ -68,7 +68,8 @@ SRCS = ft_isdigit.c \
 		ft_printf_complex_padding_helper.c \
 		ft_printf_format_helper.c \
 		ft_printf_flags_utils.c \
-		number_utils.c
+		number_utils.c \
+		ft_filename.c
 OBJS = $(SRCS:%.c=$(BINDIR)/%.o)
 DEPS = $(SRCS:%.c=%.d)
 

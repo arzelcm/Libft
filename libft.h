@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:00:08 by arcanava          #+#    #+#             */
-/*   Updated: 2024/04/10 14:28:40 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:27:50 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,5 +118,7 @@ long	ft_putnbr(long n, int *count);
 int		count_digits(long nbr);
 
 int		count_hex_digits(unsigned int nbr);
+
+char	*ft_filename(char *path);
 
 #endif
