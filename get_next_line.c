@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 13:13:03 by arcanava          #+#    #+#             */
-/*   Updated: 2024/02/24 13:13:07 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:21:34 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,12 @@ static char	*get_line_clean_buffer(char **buff, int buff_res)
 	return (line);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int line_break)
 {
 	static char	*buff[OPEN_MAX];
 	char		*line;
 	int			fill_buff_res;
+	char		*tmp;
 
 	if (BUFFER_SIZE <= 0 || fd < 0 || fd >= OPEN_MAX)
 		return (NULL);
@@ -110,5 +111,12 @@ char	*get_next_line(int fd)
 	line = get_line_clean_buffer(&buff[fd], fill_buff_res);
 	if (!line)
 		return (free_buffer(&buff[fd]), NULL);
-	return (line);
+	else if (!line_break)
+	{
+		tmp = ft_strtrim(line, "\n");
+		free(line);
+		return (tmp);
+	}
+	else
+		return (line);
 }
