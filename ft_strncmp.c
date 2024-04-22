@@ -55,7 +55,7 @@ int	ft_strnrcmp(const char *s1, const char *s2, size_t n)
 		return (-1);
 	i = s1_len - 1;
 	j = s2_len - 1;
-	while (i >= 0 && j >= 0 && i >= s1_len - 1 - n
+	while (i >= s1_len - 1 - n
 		&& ft_chrcmp(s1[i], s2[j]) == 0
 		&& s1[i] != '\0' && s2[j] != '\0')
 	{

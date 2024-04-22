@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 13:13:29 by arcanava          #+#    #+#             */
-/*   Updated: 2024/04/10 10:41:39 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:01:29 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # endif
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
+# include <stdio.h>
 
 char	*get_next_line(int fd, int line_break);
 

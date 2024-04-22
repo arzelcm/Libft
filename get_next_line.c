@@ -98,12 +98,12 @@ static char	*get_line_clean_buffer(char **buff, int buff_res)
 
 char	*get_next_line(int fd, int line_break)
 {
-	static char	*buff[OPEN_MAX];
+	static char	*buff[FOPEN_MAX];
 	char		*line;
 	int			fill_buff_res;
 	char		*tmp;
 
-	if (BUFFER_SIZE <= 0 || fd < 0 || fd >= OPEN_MAX)
+	if (BUFFER_SIZE <= 0 || fd < 0 || fd >= FOPEN_MAX)
 		return (NULL);
 	fill_buff_res = fill_buffer(fd, &buff[fd]);
 	if ((fill_buff_res < 0 || (fill_buff_res == 0 && *buff[fd] == '\0')))
