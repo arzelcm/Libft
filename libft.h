@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:00:08 by arcanava          #+#    #+#             */
-/*   Updated: 2024/04/16 19:56:53 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:25:38 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 void	ft_putchar_fd(char c, int fd);
 
-int		ft_putchar(const char *c, int *counter);
+int		ft_putchar(int fd, const char *c, int *counter);
 
 void	ft_putstr_fd(char *s, int fd);
 
@@ -111,9 +111,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-int		ft_putstr(char *str, int *count);
+int		ft_putstr(int fd, char *str, int *count);
 
-long	ft_putnbr(long n, int *count);
+long	ft_putnbr(int fd, long n, int *count);
 
 int		count_digits(long nbr);
 

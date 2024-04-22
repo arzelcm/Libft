@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_complex_padding_helper.c                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arcanava <arcanava@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:52:44 by arcanava          #+#    #+#             */
-/*   Updated: 2024/02/28 16:59:23 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:22:38 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ static void	handle_sign_flag_group(t_state *state)
 	if (state->num >= 0)
 	{
 		if (state->force_sign)
-			ft_putstr("+", &state->count);
+			ft_putstr(state->fd, "+", &state->count);
 		else if (state->empty_sign)
-			ft_putstr(" ", &state->count);
+			ft_putstr(state->fd, " ", &state->count);
 	}
 	else
 	{
-		ft_putstr("-", &state->count);
+		ft_putstr(state->fd, "-", &state->count);
 		state->num *= -1;
 	}
 }
@@ -37,7 +37,7 @@ static void	print_hex_prefix(t_state *state)
 		prefix = "0x";
 		if (*state->s == 'X')
 			prefix = "0X";
-		ft_putstr(prefix, &state->count);
+		ft_putstr(state->fd, prefix, &state->count);
 	}
 }
 

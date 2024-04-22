@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arcanava <arcanava@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:30:09 by arcanava          #+#    #+#             */
-/*   Updated: 2024/02/28 17:00:12 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:24:33 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,36 @@ int	ft_printf(const char *s, ...)
 	va_start(state.arg_lst, s);
 	state.s = s;
 	state.count = 0;
+	state.fd = STDOUT_FILENO;
 	while (*state.s)
 	{
 		init_flags(&state);
 		if (*state.s == '%')
 			apply_format(&state);
 		else
-			ft_putchar(state.s, &state.count);
+			ft_putchar(state.fd, state.s, &state.count);
+		if (state.count == -1)
+			return (-1);
+		state.s++;
+	}
+	va_end(state.arg_lst);
+	return (state.count);
+}
+int	ft_printff(int fd, const char *s, ...)
+{
+	t_state	state;
+
+	va_start(state.arg_lst, s);
+	state.s = s;
+	state.count = 0;
+	state.fd = fd;
+	while (*state.s)
+	{
+		init_flags(&state);
+		if (*state.s == '%')
+			apply_format(&state);
+		else
+			ft_putchar(state.fd, state.s, &state.count);
 		if (state.count == -1)
 			return (-1);
 		state.s++;

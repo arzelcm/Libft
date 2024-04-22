@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_complex_parses.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arcanava <arcanava@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:52:54 by arcanava          #+#    #+#             */
-/*   Updated: 2024/02/28 16:59:32 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:24:57 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	parse_pointer(t_state *state)
 	len = i + 2 + (i == 0);
 	if (!state->justify_left)
 		print_padding(state, len);
-	ft_putstr("0x", &state->count);
+	ft_putstr(state->fd, "0x", &state->count);
 	if (i == 0 && state->count != -1)
-		ft_putstr("0", &state->count);
+		ft_putstr(state->fd, "0", &state->count);
 	while (i && state->count > -1)
-		ft_putchar(&buff[--i], &state->count);
+		ft_putchar(state->fd, &buff[--i], &state->count);
 	if (state->justify_left)
 		print_padding_right(state, len);
 }
@@ -49,16 +49,16 @@ void	parse_number(t_state *state)
 	state->buffer_len = count_digits((long) state->num);
 	print_complex_padding_left(state);
 	if (!(state->num == 0 && state->precision == 0) && state->count > -1)
-		ft_putnbr(state->num, &state->count);
+		ft_putnbr(state->fd, state->num, &state->count);
 	print_padding_right(state, state->buffer_len + state->precision_len);
 }
 
 static void	print_buffer(t_state *state, char *buff, int i)
 {
 	if (i == 0 && state->count != -1 && (state->precision != 0))
-		ft_putstr("0", &state->count);
+		ft_putstr(state->fd, "0", &state->count);
 	while (i && state->count > -1)
-		ft_putchar(&buff[--i], &state->count);
+		ft_putchar(state->fd, &buff[--i], &state->count);
 }
 
 static void	print_hexadecimal(t_state *state, char *buff, int str_len)

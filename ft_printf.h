@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arcanava <arcanava@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:26:38 by arcanava          #+#    #+#             */
-/*   Updated: 2024/02/28 17:06:47 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:14:05 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ typedef struct s_state
 	int			precision_len;
 	int			buffer_len;
 	long		num;
+	int			fd;
 }	t_state;
+
+int		ft_printff(int fd, const char *s, ...);
 
 int		ft_printf(const char *s, ...);
 

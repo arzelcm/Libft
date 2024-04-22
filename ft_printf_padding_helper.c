@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_padding_helper.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arcanava <arcanava@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:52:05 by arcanava          #+#    #+#             */
-/*   Updated: 2024/02/28 16:59:57 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:22:38 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	print_padding(t_state *state, int len)
 	while (i < state->width - len
 		&& state->count > -1)
 	{
-		ft_putchar(&state->padding_char, &state->count);
+		ft_putchar(state->fd, &state->padding_char, &state->count);
 		i++;
 	}
 }
@@ -36,7 +36,7 @@ void	print_precision(t_state *state, int len)
 	i = 0;
 	while (i < len && state->count > -1)
 	{
-		ft_putstr("0", &state->count);
+		ft_putstr(state->fd, "0", &state->count);
 		i++;
 	}
 }
