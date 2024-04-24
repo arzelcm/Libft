@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:00:08 by arcanava          #+#    #+#             */
-/*   Updated: 2024/04/22 22:25:38 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:51:02 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,5 +124,7 @@ char	*ft_filename(char *path);
 int		ft_stroccurrences(char *str, char c);
 
 int		ft_normalize(int value, int min, int max);
+
+long	ft_closest_multiple(long n, long x);
 
 #endif
