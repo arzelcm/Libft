@@ -9,9 +9,12 @@ BLUE = \033[1;34m
 YELLOW = \033[1;33m
 RED = \033[1;91m
 
+#----DEFINITIONS----#
+GNL_BUFFER_SIZE ?= 42
+
 #----COMPILER----#
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=$(GNL_BUFFER_SIZE)
 
 #----LIB LINKER----#
 AR = ar
