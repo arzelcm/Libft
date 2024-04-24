@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:30:09 by arcanava          #+#    #+#             */
-/*   Updated: 2024/04/22 22:24:33 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/24 18:51:19 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	ft_printf(const char *s, ...)
 	va_end(state.arg_lst);
 	return (state.count);
 }
+
 int	ft_printff(int fd, const char *s, ...)
 {
 	t_state	state;
