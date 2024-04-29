@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:00:08 by arcanava          #+#    #+#             */
-/*   Updated: 2024/04/24 13:51:02 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:54:41 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 
 char	*ft_itoa(int n);
+
+char	*ft_ltoa(long n);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
