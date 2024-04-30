@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:16:26 by arcanava          #+#    #+#             */
-/*   Updated: 2024/04/29 18:11:00 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:42:48 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,11 @@ static long	get_positive_num(int n)
 	return (nu);
 }
 
-static long long	get_positive_lnum(long n)
+static unsigned long	get_positive_lnum(long n)
 {
-	long long	nu;
-
-	nu = n;
-	printf("con: %i, num: %lld, n: %ld\n\n", nu < 0, nu * -1, n);
-	if (nu < 0)
-		nu *= -1;
-	return (nu);
+	if (n < 0)
+		return ((unsigned long) n * -1);
+	return (n);
 }
 
 char	*ft_itoa(int n)
@@ -89,14 +85,14 @@ char	*ft_itoa(int n)
 
 char	*ft_ltoa(long n)
 {
-	char		*result;
-	size_t		i;
-	long long	x;
-	size_t		j;
+	char			*result;
+	size_t			i;
+	unsigned long	x;
+	size_t			j;
 
 	x = get_positive_lnum(n);
 	i = 0;
-	while (x > 0)
+	while (x != 0)
 		x /= 10 + (i++ *0);
 	if (n == 0)
 		i++;
@@ -105,11 +101,9 @@ char	*ft_ltoa(long n)
 		return (NULL);
 	x = get_positive_lnum(n);
 	j = 0;
-	printf("x: %lld, i: %ld\n\n\n", x, i);
 	while (j < i || (j == 0 && x == 0))
 	{
 		result[j] = (x % 10) + '0';
-		ft_printf("char: %c\n\n", result[j]);
 		x /= 10;
 		j++;
 	}
