@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_flags_utils_bonus.c                      :+:      :+:    :+:   */
+/*   ft_printf_flags_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arcanava <arcanava@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:52:15 by arcanava          #+#    #+#             */
-/*   Updated: 2024/02/28 16:59:40 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:43:23 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int	is_hex_spec(char c)
 
 int	is_number_spec(char c)
 {
-	return (c == 'd' || c == 'i' || c == 'u');
+	return (c == 'd' || c == 'i' || c == 'u' || c == 'l');
 }

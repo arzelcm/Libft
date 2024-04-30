@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 14:49:14 by arcanava          #+#    #+#             */
-/*   Updated: 2024/04/22 22:22:03 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:43:38 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long	ft_putnbr(int fd, long n, int *count)
 {
-	long	nbr;
-	char	res;
+	unsigned long	nbr;
+	char			res;
 
 	if (n < 0)
 	{
