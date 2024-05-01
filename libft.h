@@ -59,6 +59,8 @@ char	*ft_strrstr(const char *haystack, const char *needle);
 
 int		ft_atoi(const char *str);
 
+long	ft_atol(const char *str);
+
 void	*ft_calloc(size_t count, size_t size);
 
 char	*ft_strdup(const char *s1);
