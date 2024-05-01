@@ -6,9 +6,11 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:40:40 by arcanava          #+#    #+#             */
-/*   Updated: 2024/05/01 15:55:32 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/05/01 18:28:12 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
@@ -18,9 +20,16 @@ int	ft_isdigit(int c)
 int	ft_isnum(char *str)
 {
 	int	is_num;
+	int	symbols;
 
-	is_num = *str != '\0';
-	while (*str && is_num)
+	symbols = 0;
+	while (*str && (*str == '+' || *str == '-') && symbols == 0)
+	{
+		symbols++;
+		str++;
+	}
+	is_num = ft_isdigit(*str);
+	while (*str && is_num && symbols <= 1)
 		is_num = ft_isdigit(*(str++));
 	return (is_num);
 }
