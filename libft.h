@@ -6,7 +6,7 @@
 /*   By: arcanava <arcanava@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:00:08 by arcanava          #+#    #+#             */
-/*   Updated: 2024/05/01 15:52:14 by arcanava         ###   ########.fr       */
+/*   Updated: 2024/05/03 00:23:05 by arcanava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_isalpha(int c);
 
 int		ft_isdigit(int c);
 
-int		ft_isnum(char *str);
+int		ft_isnum(char *str, unsigned int digits);
 
 int		ft_isalnum(int c);
 
